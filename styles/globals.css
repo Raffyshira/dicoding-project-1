@@ -1,0 +1,252 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+::before,
+::after {
+    box-sizing: border-box;
+}
+body {
+    font-family: "Quicksand", Sans-Serif;
+    background-color: #f1f5f9;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    line-height: inherit;
+}
+
+main {
+    padding: 1.25rem;
+    max-width: 72rem;
+    margin: 0 auto;
+}
+
+header {
+    max-width: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.1rem 1.25rem;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+}
+
+header a {
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+}
+
+nav ul {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+    list-style: none;
+}
+
+nav a {
+    font-weight: 600;
+    text-decoration: none;
+    color: black;
+}
+
+.parent {
+    width: 100%;
+}
+
+.section-class {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    gap: 20px;
+    border: 1px solid #cbd5e1;
+    border-radius: 0.75rem;
+    background-color: white;
+}
+.bio {
+    width: 50%;
+    text-align: center;
+    font-weight: 600;
+    vertical-align: middle;
+    margin-left: 0.25rem;
+    width: 100%;
+    font-size: 16px;
+}
+
+.about-me {
+    font-weight: 400;
+    margin-top: 0.875rem;
+    width: 100%;
+}
+
+.about-me a {
+    color: #3b82f6;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.button-group {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: 600;
+    margin-top: 0.875rem;
+    column-gap: 0.5rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+}
+
+.button-group button {
+    background-color: #3b82f6;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.button-group button:hover {
+    background-color: #2563eb;
+    transform: scale(0.95);
+}
+
+aside img {
+    width: 100%;
+    border-radius: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    margin: 0 auto;
+}
+
+.title {
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    padding-bottom: 1.25rem;
+}
+
+.grid-class {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+@media (min-width: 640px) {
+    .section-class {
+        flex-direction: row;
+    }
+    aside img {
+        width: 100%;
+    }
+    .bio {
+        text-align: start;
+    }
+    .grid-class {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .button-group {
+        justify-content: start;
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+    .image-wrapper h3 {
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
+    footer p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+}
+
+.image-wrapper {
+    position: relative;
+    z-index: 10;
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.75rem;
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
+}
+
+.image-wrapper .overlay {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
+    border-radius: 0.75rem;
+}
+
+.image-wrapper h3 {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    width: 100%;
+    text-align: center;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    font-weight: 600;
+    color: white;
+}
+
+footer {
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    margin-top: auto;
+    padding: 20px;
+    background-color: white;
+    text-align: center;
+}
+
+.footer-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 0.75rem;
+}
+
+.footer-title h1 {
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+
+footer svg {
+    width: 20px;
+    height: 20px;
+    fill: #dc2626;
+}
+
+footer p {
+    text-align: center;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+}
